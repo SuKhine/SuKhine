@@ -25,11 +25,74 @@ const getHeader = document.querySelectorAll("header"),
   getIFrame = document.querySelectorAll("iframe"),
   getImage = document.querySelectorAll("img"),
   getWords = document.body.innerText;
+  var x, total, randomArray, totalNumber;
 
-/* =================
-   ASSERTIONS 
-   These are the things we check are true about your page.
-   Read and update your HTML to discover the requirements.
-   The tests will run every time you update your code.
-   ===================
-*/
+  // Describe this function...
+  function updateInfoSpan(x) {
+    if(--window.LoopTrap <= 0) throw "Infinite loop.";
+    let element_info = document.getElementById('info');
+    element_info.innerText = x;
+  }
+  
+  // Describe this function...
+  function displayRolls() {
+    if(--window.LoopTrap <= 0) throw "Infinite loop.";
+    let element_list = document.getElementById('list');
+    let new_li = document.createElement('li');
+
+    if(total.length > 0){
+       new_li.innerText = total.slice(-1)[0];
+    }
+   
+    element_list.appendChild(new_li);
+  }
+  
+  function randomInt(n) {
+    // Return a random number from in [0, n[
+    return Math.floor(Math.random()*n);
+  }
+  
+  function randomMember(arr) {
+    // Return a random member of the array
+    return arr[randomInt(arr.length)]
+  }
+  
+  
+  total = [];
+  randomArray = [1, 2, 3, 4, 5, 6];
+  displayRolls();
+  
+  
+  document.getElementById('button_roll').addEventListener('click', (event) => {
+    total.push(randomMember(randomArray));
+    let element_total = document.getElementById('total');
+    element_total.innerText = total.reduce((a,b) => a+b, 0);
+    totalNumber = total.reduce((a,b) => a+b, 0);
+    if (totalNumber == 11) {
+      updateInfoSpan('You Won!');
+    } else if (totalNumber > 11) {
+      updateInfoSpan('You Lost!');
+    } else if (totalNumber < 11) {
+      updateInfoSpan('Keep playing!');
+    }
+    displayRolls();
+  
+  });
+  
+  document.getElementById('button_remove').addEventListener('click', (event) => {
+    total.pop();
+    totalNumber = total.reduce((a,b) => a+b, 0);
+    let element_total2 = document.getElementById('total');
+    element_total2.innerText = total.reduce((a,b) => a+b, 0);
+    updateInfoSpan('Keep playing!');
+  
+  });
+  
+  document.getElementById('button_restart').addEventListener('click', (event) => {
+    total = [];
+    totalNumber = 0;
+    let element_total3 = document.getElementById('total');
+    element_total3.innerText = total.reduce((a,b) => a+b, 0);
+    updateInfoSpan('Keep playing!');
+  
+  });
