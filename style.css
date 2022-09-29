@@ -1,0 +1,69 @@
+/* =================
+  WRITE YOUR CSS HERE.
+  Check the ⌄ for help with formatting and validating your code.
+  You must write some CSS to complete this challenge.
+   ===================
+*/
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+header{
+  color:Black;
+  font-size:40px;
+  text-align: left;
+  font-family:Indie Flower;
+}
+
+.center{
+
+ width: 300px;
+ display: row;
+ border-radius: 50%;
+
+ margin-left: 60px;
+ padding-left: 20px
+
+}
+
+h1{
+   font-family:"Cookie";
+   font-size:30px;
+}
+h2{
+    font-size:15px; 
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline;
+}
+
+a{
+  
+  font-size:20px;
+  color:red;
+}
+
+.food-title{
+  text-align:left;
+  font-weight:bold;
+  font-size:15px;
+}
+
+
+
+
+/* don't edit this */
+.jest-lite-report__status--pass {
+  background: var(--color-pass);
+}
+.jest-lite-report__errors { display:none }
