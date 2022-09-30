@@ -46,6 +46,12 @@ const getHeader = document.querySelectorAll("header"),
    
     element_list.appendChild(new_li);
   }
+
+  document.getElementById('button').addEventListener('click', (event) => {
+    let element_submitmessage = document.getElementById('submitmessage');
+    element_submitmessage.innerText = 'Sent';
+  
+  });
   
   function randomInt(n) {
     // Return a random number from in [0, n[

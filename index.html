@@ -76,12 +76,30 @@ Don't delete!-->
 <aside id="tests" aria-label="Test Readout." aria-live="polite" style="overflow:auto">
 </aside>
 
+<div id="rolldicediv">
 <p>So far you have rolled:</p>
 <ul id="list"></ul>
 <button id="button_roll">Roll the dice</button>
 <p>Total: <span id="total">0</span>. <span id="info">Keep playing!</span></p>
 <button id="button_remove">Remove the last roll</button>
 <button id="button_restart">Start again</button>
+</div>
+
+<br><br>
+<div id ="commentsection">
+<h2>Please leave your comment here.</h2>
+<label>Your name:</label>
+<input type="text" id="yname">
+<label for="email">Your email:</label>
+<input type="text" id="email"><br><br>
+
+<textarea id="comment" name="comment" rows="4" cols="50" placeholder="Type your comment here"></textarea>
+<span id="submitmessage"></span>
+
+<button id="button">Submit</button>
+
+
+</div>
 
 <!-- partial -->
   <script src='https://unpkg.com/jest-lite@1.0.0-alpha.4/dist/core.js'></script>
